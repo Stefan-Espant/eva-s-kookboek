@@ -1,0 +1,35 @@
+* {
+    box-shadow: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* Animaties */
+    --animation-default: 0.2s;
+    /* Eenheden */
+    --unit-deca: 6.25rem; /* 100px */
+    --unit-large: 3.125rem; /* 50px */
+    --unit-heading: 3rem; /* 48px */
+    --unit-default: 1.25rem; /* 20px */
+    --unit-small: 0.625rem; /* 10px */
+    --unit-micro: 0.3125rem; /* 5px */
+    --unit-nano: 0.15625rem; /* 2.5px */
+    --unit-pico: .5px;
+
+    /* Kleuren */
+    --color-primary-100: #662C3D;
+    --color-primary-75: #D47E8B;
+    --color-primary-50: #FFA7B7;
+    --color-primary-40: #FFCAD4;
+    --color-primary-25: #FCEFF2;
+    --color-default: #f4f4f4;
+    --color-invert: #161616;
+
+    /* Schaduwen  */
+    --shadow-default: 0px 2px 8px rgba(135, 135, 135, 0.1), 0px 4px 4px -2px rgba(135, 135, 135, 0.12), 0px 8px 16px -4px rgba(0, 0, 0, 0.2);
+}
+
+body {
+    background-color: var(--color-primary-40);
+}
