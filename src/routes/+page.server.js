@@ -15,6 +15,11 @@ export async function load() {
           uid
           aantalPersonen
           bereidingstijd
+          image {
+            url
+            width
+            height
+          }
         }
       }
     `

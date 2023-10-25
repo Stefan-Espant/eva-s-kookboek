@@ -19,8 +19,8 @@
     --unit-pico: .5px;
 
     /* Kleuren */
+    --color-primary-125: #411522;
     --color-primary-100: #662C3D;
-
     --color-primary-75: #D47E8B;
     --color-primary-50: #FFA7B7;
     --color-primary-40: #FFCAD4;
@@ -49,6 +49,7 @@ main {
     padding: var(--unit-default);
 }
 
+
 li {
     list-style: none;
     margin-bottom: var(--unit-small);
@@ -74,13 +75,44 @@ h2 {
     color: var(--color-primary-100);
 }
 
+h3 {
+    font-weight: 500;
+
+}
+
 figure {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 /* Interactief */
-a {
+a, button {
+    border: unset;
     text-decoration: none;
     cursor: pointer;
+}
+
+/* Formulieren */
+form {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: var(--unit-small);
+}
+
+form input:focus-visible {
+    outline: unset;
+}
+
+form input[type="search"] {
+    width: 100%;
+    border: var(--unit-nano) solid var(--color-primary-50);
+    border-radius: var(--unit-small);
+    padding: var(--unit-micro) var(--unit-small);
+}
+
+form button {
+    padding: var(--unit-small);
+    border-radius: var(--unit-small);
+    border: var(--unit-nano) solid var(--color-primary-125);
+    background-color: var(--color-primary-100);
 }
