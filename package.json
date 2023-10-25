@@ -27,6 +27,7 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.3.1",
-    "graphql-request": "^6.1.0"
+    "graphql-request": "^6.1.0",
+    "svelte-spa-router": "^3.3.0"
   }
 }

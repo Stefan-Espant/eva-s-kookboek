@@ -25,7 +25,7 @@
     --color-primary-50: #FFA7B7;
     --color-primary-40: #FFCAD4;
     --color-primary-25: #FCEFF2;
-    --color-default: #f4f4f4;
+    --color-default: #fff9f9;
     --color-invert: #161616;
 
     /* Schaduwen  */
@@ -90,6 +90,10 @@ a, button {
     border: unset;
     text-decoration: none;
     cursor: pointer;
+}
+
+a figure {
+    padding: var(--unit-nano) var(--unit-small);
 }
 
 /* Formulieren */

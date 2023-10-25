@@ -1,12 +1,29 @@
 <script>
 	import Header from '$lib/components/header.svelte';
-	import { onMount } from 'svelte';
+    import { onMount } from 'svelte';
+    import { push } from 'svelte-spa-router';
 
-	export let data;
+    let searchQuery = '';
 
-    console.log(data)
+    // Functie om de zoekopdracht uit te voeren
+    function performSearch() {
+        // Hier kun je de zoeklogica implementeren, bijvoorbeeld een API-aanroep.
+        // Vervang de volgende console.log met de echte zoeklogica.
+        console.log('Zoekopdracht uitgevoerd:', searchQuery);
+
+        // Navigeer naar een zoekresultatenpagina met behulp van svelte-spa-router.
+        // Je kunt de zoekresultaten en zoekopdracht doorgeven aan de nieuwe pagina.
+        push(`/search?q=${searchQuery}`);
+    }
+
+    // Eventhandler voor het indienen van het zoekformulier
+    function handleSubmit(event) {
+        event.preventDefault();
+        performSearch();
+    }
+
+    export let data;
 </script>
-
 <Header />
 
 <main>
@@ -32,7 +49,7 @@
                     </figcaption>
                 </figure>
             </button>
-            <input type="search" name="q" />
+            <input type="search" name="q" bind:value={searchQuery} />
             <label for="site-search" hidden>Search the site:</label>
         </form>
     </section>
@@ -56,7 +73,7 @@
         <article>
             <img src={recept.image.url} width={recept.image.width} height={recept.image.height} alt="Afbeelding van {recept.titel}" />
             <h3>{recept.titel}</h3>
-            <a href="/recept/{recept.id}">Bekijk recept</a>
+            <a href="/recept/{recept.id}">Bekijk recept ›</a>
         </article>
         {/each}
     </section>
@@ -76,6 +93,18 @@
         padding: var(--unit-small);
     }
 
+    article a {
+        color: var(--color-primary-75);
+        padding: var(--unit-nano) var(--unit-micro);
+        border-radius: var(--unit-nano);
+        transition: var(--animation-default) ease-in-out;
+    }
+
+    article a:is(:hover, :focus) {
+        background-color: var(--color-primary-40);
+        color: var(--color-primary-100);
+    }
+
     article img {
         width: 100%;
         height: 100%;
@@ -91,6 +120,16 @@
         -webkit-line-clamp: 2;
         overflow: hidden;
         display: -webkit-box;
-        margin-bottom: 0;
+        margin-bottom: var(--unit-micro);
+    }
+
+    section:first-child {
+        width: clamp(12rem, 100%, 30rem);
+        margin: 0 auto;
+
+    }
+
+    input:is(:focus, :focus-visible) {
+        border: var(--unit-nano) solid var(--color-primary-100);
     }
 </style>

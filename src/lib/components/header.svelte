@@ -72,7 +72,7 @@
                     <figcaption>Over</figcaption>
                 </figure>
             </a></li>
-            <li><a href="/">
+            <li><a href="/voeg-een-recept-toe">
                 <figure>
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-layout-grid-add" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -122,7 +122,7 @@
 
     header details ul a figure {
         border-radius: var(--unit-micro);
-        padding: var(--unit-nano) var(--unit-micro);
+        padding: var(--unit-nano) var(--unit-small) var(--unit-nano) var(--unit-micro);
         transition: var(--animation-default) ease-in-out;
     }
 
@@ -149,7 +149,7 @@
         border: var(--unit-nano) solid var(--color-primary-50);
         border-radius: var(--unit-small);
         background-color: var(--color-primary-25);
-        padding: var(--unit-default);
+        padding: var(--unit-small);
         margin: 0;
         display: flex;
         flex-direction: column;
