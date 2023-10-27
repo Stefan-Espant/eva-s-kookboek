@@ -81,12 +81,12 @@
 </main>
 
 <style>
-    body {
-        background-color: beige;
+    main {
+        background-color: var(--color-primary-40);
     }
 
     article {
-        width: 10rem;
+        width: clamp(16rem, 100%, 20rem);
         background-color: var(--color-primary-25);
         border: var(--unit-nano) solid var(--color-primary-50);
         border-radius: var(--unit-small);

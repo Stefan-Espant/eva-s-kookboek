@@ -19,7 +19,7 @@
             <legend hidden>Recept gegevens</legend>     
             <textarea for="preparation" type="" required />
             <label name="preparation" id="preparation">Bereiding</label>
-            
+
         </fieldset>
     </form>
 </main>
@@ -39,6 +39,8 @@
     input, textarea {
         border: var(--unit-nano) solid var(--color-primary-50);
         border-radius: var(--unit-small);
+        height: 2.75rem;
+        padding: var(--unit-pico) var(--unit-small);
     }
 
     label {
