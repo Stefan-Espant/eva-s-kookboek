@@ -10,13 +10,15 @@
 <Header />
 
 <main style="background-color: {data.recept.achtergrondkleur.hex}">
+<section>
     <img src={data.recept.image.url} width={data.recept.image.width} height={data.recept.image.height}  alt="Afbeelding van {data.recept.titel}" />
 
-    <h1>{data.recept.titel}</h1>
-    <p>Door: {data.recept.auteur}</p>
+    <h1 style="color: {data.recept.titelkleur.hex}">{data.recept.titel}</h1>
+    <p style="color: {data.recept.titelkleur.hex}">Door: {data.recept.voornaam} {data.recept.achternaam}</p>
 
-    <ul>
-        <li>
+    <ul class="receipe-info">
+        <!-- Aantal personen -->
+        <li style="color: {data.recept.titelkleur.hex}">
             <figure>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_1_169)">
@@ -37,7 +39,8 @@
             </figure>
         {data.recept.aantalPersonen}
         </li>
-        <li>
+        <!-- Bereidingstijd -->
+        <li style="color: {data.recept.titelkleur.hex}">
             <figure>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_1_175)">
@@ -56,36 +59,82 @@
             </figure>
             {data.recept.bereidingstijd} minuten
         </li>
+        <li style="color: {data.recept.titelkleur.hex}">
+            <figure>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_59_4)">
+                    <path d="M19 15V3C14.184 7.594 13.977 11.319 14 15H19ZM19 15V21H18V18M8 4V21M5 4V7C5 7.79565 5.31607 8.55871 5.87868 9.12132C6.44129 9.68393 7.20435 10 8 10C8.79565 10 9.55871 9.68393 10.1213 9.12132C10.6839 8.55871 11 7.79565 11 7V4" stroke="#D47E8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_59_4">
+                    <rect width="24" height="24" fill="white"/>
+                    </clipPath>
+                    </defs>
+                </svg>
+                <figcaption>
+                    Maaltijd:
+                </figcaption>
+            </figure>
+            Diner
+        </li>
     </ul>
-    <article>
     <h2 hidden>Ingrediënten</h2>
-    <p>
-        {data.recept.ingredienten}
-    </p>
-    </article>
-    <article>
-        <h2>Bereiding:</h2>
-        <p>{data.recept.bereiding}</p>
-    </article>
+    <ul>
+        {#each data.recept.ingredienten as ingredient}
+            <li style="color: {data.recept.titelkleur.hex}">
+                {ingredient}
+            </li>
+        {/each}
+    </ul>
+        <h2 style="color: {data.recept.titelkleur.hex}">Bereiding:</h2>
+        <p style="color: {data.recept.titelkleur.hex}">{data.recept.bereiding}</p>
+    </section>
 </main>
 
 <style>
+    section {
+        display: grid;
+        gap: var(--unit-default);
+
+    }
+
+    img, .receipe-info {
+        border: 2px solid #D1B599;
+        border-radius: var(--unit-small);
+    }
 
 	img {
-		width: 10rem;
-        height: 10rem;
+		width: clamp(var(--unit-deca), 100%, 22.5rem);
+        height: auto;
         aspect-ratio: 1/1;
         object-fit: cover;
 	}
 
-    li {
+    .receipe-info {
+        width: clamp(var(--unit-deca), 100%, 21.5rem);
+        margin: auto;
+        background-color: #FFFBEE;
+        padding: var(--unit-micro);
         display: flex;
+        flex-direction: column;
+        gap: var(--unit-micro);
+    }
+
+    li {
+        display: grid;
         align-items: center;
         gap: var(--unit-small);
+        grid-template-columns: 3fr 2fr;
+        font-size: var(--unit-default);
+        margin-bottom: 0;
     }
 
     li figure {
         display: flex;
         gap: var(--unit-micro)
+    }
+
+    h2 {
+        margin-bottom: 0;
     }
 </style>

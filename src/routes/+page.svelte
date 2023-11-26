@@ -73,6 +73,7 @@
         <article>
             <img src={recept.image.url} width={recept.image.width} height={recept.image.height} alt="Afbeelding van {recept.titel}" />
             <h3>{recept.titel}</h3>
+            <h4>Door: {recept.voornaam} {recept.achternaam}</h4>
             <a href="/recept/{recept.id}">Bekijk recept ›</a>
         </article>
         {/each}
@@ -120,7 +121,6 @@
         -webkit-line-clamp: 2;
         overflow: hidden;
         display: -webkit-box;
-        margin-bottom: var(--unit-micro);
     }
 
     section:first-child {

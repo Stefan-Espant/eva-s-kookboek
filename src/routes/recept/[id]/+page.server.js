@@ -28,7 +28,8 @@ export async function load({ params }) {
 					height
 					url
 				}
-        auteur
+        voornaam
+		achternaam
 			}
 		}
 	`;
