@@ -92,6 +92,7 @@
         border: var(--unit-nano) solid var(--color-primary-50);
         border-radius: var(--unit-small);
         padding: var(--unit-small);
+        height: fit-content;
     }
 
     article a {
@@ -126,10 +127,24 @@
     section:first-child {
         width: clamp(12rem, 100%, 30rem);
         margin: 0 auto;
+    }
 
+    section:last-child {
+        display: grid;
+        gap: var(--unit-default);
     }
 
     input:is(:focus, :focus-visible) {
         border: var(--unit-nano) solid var(--color-primary-100);
     }
+
+@media (min-width: 30rem) {
+    section:last-child {
+        width: calc(344px * 2 + var(--unit-default));
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--unit-default);
+        margin: var(--unit-default) auto;
+    }
+}
 </style>
