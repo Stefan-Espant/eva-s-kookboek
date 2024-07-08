@@ -34,7 +34,6 @@
 
     <details>
         <summary>
-            <a class="dropdown" role="button">
                 <figure>
                     <svg width="4" height="20" viewBox="0 0 4 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="2" cy="2" r="2" fill="#D47E8B"/>
@@ -45,7 +44,6 @@
                         menu
                     </figcaption>
                 </figure>
-            </a>
         </summary>
         <ul>
             <li><a href="/">
@@ -72,7 +70,7 @@
                     <figcaption>Over</figcaption>
                 </figure>
             </a></li>
-            <li><a href="/voeg-een-recept-toe">
+            <li><a href="/upload">
                 <figure>
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-layout-grid-add" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
