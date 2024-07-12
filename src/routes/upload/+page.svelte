@@ -138,6 +138,12 @@
 		border-radius: 0.75rem;
 	}
 
+	fieldset:last-of-type {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+	}
+
 	legend {
 		color: var(--color-primary-100);
 	}
